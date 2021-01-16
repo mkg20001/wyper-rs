@@ -1,0 +1,26 @@
+[package]
+name = "wyper-rs"
+version = "0.1.0"
+authors = ["mkg20001 <mkg20001@gmail.com>","qwertz19281 <dellen903@gmail.com>"]
+edition = "2018"
+# TODO license
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1"
+libc = "=0.2.27" # TODO exact version forced for testing
+rand_hc = "0.3"
+rand_core = "*"
+size_format = "1.0"
+serde_json = "1"
+serde = "1"
+serde_derive = "1"
+
+[dependencies.maligned]
+version = "0.2"
+features = ["align-4k"]
+
+[profile.release]
+codegen-units = 1
+lto = true
